@@ -22,6 +22,13 @@ This project was built using these tools:
 make install
 ```
 
+### Examples
+
+```bash
+uv run hexlet-python-package 5
+
+2.5
+```
 
 ### Run tests
 
