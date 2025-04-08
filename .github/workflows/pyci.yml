@@ -26,5 +26,10 @@ jobs:
           make test-coverage
       - name: SonarQubeScan
         uses: SonarSource/sonarqube-scan-action@v4
-        env: 
+        env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args:
+            sonar.projectKey=hexlet-boilerplates_python-package
+            sonar.organization=hexlet-boilerplates
+            sonar.python.coverage.reportPaths=coverage.xml
