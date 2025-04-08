@@ -25,11 +25,11 @@ jobs:
         run: |
           make test-coverage
       - name: SonarQubeScan
-        uses: SonarSource/sonarqube-scan-action@v4
+        uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          args:
-            sonar.projectKey=hexlet-boilerplates_python-package
-            sonar.organization=hexlet-boilerplates
-            sonar.python.coverage.reportPaths=coverage.xml
+          args: >
+            -Dsonar.projectKey=hexlet-boilerplates_python-package
+            -Dsonar.organization=hexlet-boilerplates
+            -Dsonar.python.coverage.reportPaths=coverage.xml
