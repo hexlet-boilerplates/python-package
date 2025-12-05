@@ -1,0 +1,75 @@
+---
+# Dependabot configuration
+#
+# This file configures automated dependency updates for a small Python project
+# managed via pyproject.toml (PEP 621) and Hatch.
+#
+# Goals:
+#  - keep Python dependencies (dev + runtime) up to date with minimal noise
+#  - keep GitHub Actions workflow updates separate from Python dependencies
+#  - batch minor and patch updates into a few focused PRs
+#  - keep potentially breaking (major) updates visible as separate PRs
+#
+# Grouping strategy:
+#  - GitHub Actions:
+#      - one grouped PR for minor/patch updates
+#      - one grouped PR for major updates
+#  - Python (pip ecosystem, pyproject.toml):
+#      - one group for development/test tooling (ruff, pytest, pytest-cov)
+#      - one catch-all group for all other Python packages (runtime deps, etc.)
+#      - major updates are not grouped and will be opened as separate PRs by default
+#
+# Recommended documentation:
+#
+# 1) Dependabot Options Reference — full list of available keys,
+#    including "groups", "update-types", etc.
+#    https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+#
+# 2) Optimizing pull request creation — best practices for grouping updates,
+#    controlling frequency, and limiting noise in development teams.
+#    https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/optimizing-pr-creation-version-updates
+#
+version: 2
+updates:
+  # 1) Keep GitHub Actions workflows up to date
+  - package-ecosystem: github-actions
+    directory: /  # Look for workflow files in the repo root
+    schedule:
+      interval: weekly  # Check for updates once a week
+    labels: [dependencies, automated, actions]
+    groups:
+      actions-minor-patch:
+        # Group all non-breaking (minor + patch) updates into a single PR
+        update-types: [minor, patch]
+      actions-major:
+        # Group all major updates for Actions into a separate PR
+        update-types: [major]
+  # 2) Python dependencies (pyproject.toml, pip ecosystem)
+  #
+  # Dependabot will read dependency definitions from pyproject.toml
+  # (and lock files if present). Here we group dev tooling separately
+  # from all other Python packages.
+  - package-ecosystem: pip
+    directory: /  # pyproject.toml is in the repo root
+    schedule:
+      interval: weekly
+    labels: [dependencies, automated, python]
+    groups:
+      python-dev-minor-patch:
+        # Development / testing tooling (from [dependency-groups].dev):
+        #  - ruff
+        #  - pytest
+        #  - pytest-cov
+        #
+        # Minor and patch updates for these tools will be grouped into a single PR.
+        patterns: [ruff, pytest, pytest-cov]
+        update-types: [minor, patch]
+      python-deps-minor-patch:
+        # Catch-all group for all other Python dependencies:
+        #  - any future runtime dependencies added under [project] dependencies
+        #  - any package not matched by python-dev-minor-patch
+        #
+        # Minor and patch updates for these packages will be grouped together.
+        # Major updates for any Python package will be opened as separate PRs
+        # by default, which makes potentially breaking changes easier to review.
+        update-types: [minor, patch]
