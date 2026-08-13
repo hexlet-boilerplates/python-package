@@ -18,6 +18,11 @@ dev = [
 [project.scripts]
 hexlet-python-package = "hexlet_python_package.scripts.main:main"
 
+[tool.coverage.report]
+# Порог покрытия: ниже него `make test-coverage` падает,
+# и сборка в CI краснеет вместе с ним
+fail_under = 80
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
