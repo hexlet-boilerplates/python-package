@@ -8,11 +8,20 @@ This project was built using these tools:
 
 | Tool                                                                   | Description                                             |
 |------------------------------------------------------------------------|---------------------------------------------------------|
+| [mise](https://mise.jdx.dev/)                                           | "The front-end to your dev env"                         |
 | [uv](https://docs.astral.sh/uv/)                                       | "An extremely fast Python package and project manager, written in Rust" |
 | [Pytest](https://pytest.org)                                           | "A mature full-featured Python testing tool"            |
 | [ruff](https://docs.astral.sh/ruff/)                                   | "An extremely fast Python linter and code formatter, written in Rust" |
 
 ---
+
+### Requirements
+
+[mise](https://mise.jdx.dev/) installs Python, uv and ruff from `mise.toml`:
+
+```bash
+mise install
+```
 
 ### Setup
 
