@@ -2,6 +2,46 @@
 
 lockfile_version = 3
 
+[[tools.hk]]
+version = "2.8.1"
+backend = "packslip:github.com/jdx/hk"
+specifiers = ["latest"]
+
+[tools.hk."platforms.linux-arm64"]
+checksum = "sha256:50d7b26988ce8aff77697188a2e1e9d01162de203e7b9ace7ec0d42365c4ea61"
+url = "https://github.com/jdx/hk/releases/download/v2.8.1/hk-aarch64-unknown-linux-gnu.tar.gz"
+signer = "sigstore-oidc:https://github.com/jdx/hk/.github/workflows/release.yml"
+
+[tools.hk."platforms.linux-x64"]
+checksum = "sha256:8033ca42aaf88412e789c281f7e2766526e60e12f95a16c03574aeb0a2c7a657"
+url = "https://github.com/jdx/hk/releases/download/v2.8.1/hk-x86_64-unknown-linux-gnu.tar.gz"
+signer = "sigstore-oidc:https://github.com/jdx/hk/.github/workflows/release.yml"
+
+[tools.hk."platforms.macos-arm64"]
+checksum = "sha256:87d5288c1d19acd45885e35722f655a1e1498a1cb92f42c1490e7f1623aedddd"
+url = "https://github.com/jdx/hk/releases/download/v2.8.1/hk-aarch64-apple-darwin.tar.gz"
+signer = "sigstore-oidc:https://github.com/jdx/hk/.github/workflows/release.yml"
+
+[[tools.pkl]]
+version = "0.32.2"
+backend = "aqua:apple/pkl"
+specifiers = ["latest"]
+
+[tools.pkl."platforms.linux-arm64"]
+checksum = "sha256:e60744e17d4ddc0257a35260998b5f98387b5d6a5e868317cccfbebe8d962ae3"
+url = "https://github.com/apple/pkl/releases/download/0.32.2/pkl-linux-aarch64"
+url_api = "https://api.github.com/repos/apple/pkl/releases/assets/663850794"
+
+[tools.pkl."platforms.linux-x64"]
+checksum = "sha256:874c75484c79add77fb2346ea4ab2e8875eea35fb707894bf5457a2df5d03def"
+url = "https://github.com/apple/pkl/releases/download/0.32.2/pkl-linux-amd64"
+url_api = "https://api.github.com/repos/apple/pkl/releases/assets/663850808"
+
+[tools.pkl."platforms.macos-arm64"]
+checksum = "sha256:466952f0b30c93dfa36393a5b3695159917ce4291e3c936a18a0a240cfbe98e9"
+url = "https://github.com/apple/pkl/releases/download/0.32.2/pkl-macos-aarch64"
+url_api = "https://api.github.com/repos/apple/pkl/releases/assets/663850972"
+
 [[tools.python]]
 version = "3.15.1"
 backend = "core:python"

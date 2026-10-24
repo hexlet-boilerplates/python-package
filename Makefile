@@ -1,5 +1,6 @@
 install:
 	uv sync
+	mise exec -- hk install --mise
 
 update:
 	uv lock --upgrade

@@ -3,6 +3,9 @@ python = "latest"
 uv = "latest"
 ruff = "latest"
 ty = "latest"
+# hk запускает проверки в git-хуках и в CI (hk.pkl), pkl нужен ему для чтения конфига.
+hk = "latest"
+pkl = "latest"
 
 [env]
 # uv берёт Python из mise, а не скачивает свой

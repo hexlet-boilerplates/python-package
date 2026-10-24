@@ -13,9 +13,8 @@ jobs:
       - uses: jdx/mise-action@v5
       - name: Install dependencies
         run: make install
-      - name: Run linter and pytest
-        run: |
-          make check
+      - name: Run checks
+        run: mise exec -- hk check --all
       # Порог покрытия задан в pyproject.toml ([tool.coverage.report] fail_under),
       # поэтому шаг падает при просадке покрытия, и бейджик CI отражает в том числе его
       - name: Run test coverage
