@@ -10,6 +10,7 @@ readme = "README.md"
 
 [dependency-groups]
 dev = [
+    "deptry>=0.25.1",
     "pytest>=9.1.1",
     "pytest-cov>=7.1.0",
 ]

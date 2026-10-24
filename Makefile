@@ -22,6 +22,7 @@ lint:
 	rumdl check .
 	typos
 	jactionlint
+	uv run deptry .
 
 lint-fix:
 	ruff check --fix
