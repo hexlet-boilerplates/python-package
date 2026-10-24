@@ -2,7 +2,7 @@
 
 [![Github Actions Status](https://github.com/hexlet-boilerplates/python-package/workflows/Python%20CI/badge.svg)](https://github.com/hexlet-boilerplates/python-package/actions)
 
-### Links
+## Links
 
 This project was built using these tools:
 
