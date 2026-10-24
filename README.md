@@ -12,12 +12,13 @@ This project was built using these tools:
 | [uv](https://docs.astral.sh/uv/)                                       | "An extremely fast Python package and project manager, written in Rust" |
 | [Pytest](https://pytest.org)                                           | "A mature full-featured Python testing tool"            |
 | [ruff](https://docs.astral.sh/ruff/)                                   | "An extremely fast Python linter and code formatter, written in Rust" |
+| [ty](https://docs.astral.sh/ty/)                                       | "An extremely fast Python type checker and language server, written in Rust" |
 
 ---
 
 ### Requirements
 
-[mise](https://mise.jdx.dev/) installs Python, uv and ruff from `mise.toml`:
+[mise](https://mise.jdx.dev/) installs Python, uv, ruff and ty from `mise.toml`:
 
 ```bash
 mise install
@@ -41,6 +42,13 @@ uv run hexlet-python-package 5
 
 ```bash
 make test
+```
+
+### Lint
+
+```bash
+make lint      # ruff check, ruff format --check, ty check
+make lint-fix  # ruff check --fix, ruff format
 ```
 
 [![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/assets/master/images/hexlet_logo128.png)](https://hexlet.io/?utm_source=github&utm_medium=link&utm_campaign=python-package)

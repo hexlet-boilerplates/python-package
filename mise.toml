@@ -2,3 +2,8 @@
 python = "latest"
 uv = "latest"
 ruff = "latest"
+ty = "latest"
+
+[env]
+# uv берёт Python из mise, а не скачивает свой
+UV_PYTHON_PREFERENCE = "only-system"

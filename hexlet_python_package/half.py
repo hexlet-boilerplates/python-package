@@ -1,2 +1,2 @@
-def half(num: int) -> float:
+def half(num: float) -> float:
     return num / 2

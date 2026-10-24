@@ -3,7 +3,7 @@ import sys
 from hexlet_python_package.half import half
 
 
-def main():
+def main() -> None:
     if len(sys.argv) < 2:
         print("Error: You must provide a number as an argument.")
         return

@@ -15,11 +15,17 @@ test-coverage:
 	uv run pytest --cov=hexlet_python_package --cov-report term --cov-report xml
 
 lint:
-	uv run ruff check
+	ruff check
+	ruff format --check
+	ty check
+
+lint-fix:
+	ruff check --fix
+	ruff format
 
 check: test lint
 
 build:
 	uv build
 
-.PHONY: install update test lint selfcheck check build
+.PHONY: install update run test test-coverage lint lint-fix check build

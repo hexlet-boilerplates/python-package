@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      # Python, uv и ruff ставятся из mise.toml
+      # Python, uv, ruff и ty ставятся из mise.toml
       - uses: jdx/mise-action@v5
       - name: Install dependencies
         run: make install
