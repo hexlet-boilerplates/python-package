@@ -1,0 +1,18 @@
+# Автослияние minor и patch PR от Dependabot, логика в hexlet-components/shared-workflows
+name: Dependabot auto-merge
+
+on: pull_request
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  automerge:
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: hexlet-components/shared-workflows/.github/workflows/dependabot-automerge.yml@7b84d02d32ddeb634561cae27bdb8e4d77a43867 # v1.0.0
