@@ -3,7 +3,7 @@ authors = [
     {name = "Hexlet team", email = "team@hexlet.io"},
 ]
 requires-python = "<4.0,>=3.12"
-name = "python-example-app"
+name = "hexlet-python-package"
 version = "0.1.0"
 description = "Example application"
 readme = "README.md"
@@ -24,8 +24,5 @@ hexlet-python-package = "hexlet_python_package.scripts.main:main"
 fail_under = 80
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[tool.hatch.build.targets.wheel]
-packages = ["hexlet_python_package"]
+requires = ["uv_build>=0.13.0,<0.14"]
+build-backend = "uv_build"

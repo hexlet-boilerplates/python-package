@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Шаблон пакета на Python и uv. Код лежит в `hexlet_python_package/`, консольные скрипты в `hexlet_python_package/scripts`, тесты pytest в `tests/`.
+Шаблон пакета на Python и uv. Раскладка та же, что создаёт `uv init`: код лежит в `src/hexlet_python_package/`, консольные скрипты в `src/hexlet_python_package/scripts`, сборка `uv_build`, тесты pytest в `tests/`.
 
 ## Команды
 
